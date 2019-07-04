@@ -1,55 +1,27 @@
 {
-  "name": "cruise",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "private": false,
-  "directories": {
-    "doc": "doc"
+  "name": "react-with-less",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-app-rewire-less": "^2.1.3",
+    "react-app-rewired": "^1.6.2",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "cyber-scripts start",
-    "build": "cyber-scripts build",
-    "lint": "cyber-scripts lint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "./src/**/*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "author": "tzzy",
-  "commonDependencies": {
-    "axios": "0.18.0",
-    "classnames": "2.2.5",
-    "crypto-js": "3.1.9-1",
-    "history": "4.7.2",
-    "moment": "2.22.1",
-    "prop-types": "15.6.1",
-    "rc-form": "2.2.0",
-    "react": "16.8.6",
-    "react-dom": "npm:@hot-loader/react-dom",
-    "react-redux": "5.0.7",
-    "react-router-dom": "4.2.2",
-    "react-router-redux": "5.0.0-alpha.9",
-    "redux": "4.0.0",
-    "redux-actions": "2.3.0",
-    "redux-promise": "0.5.3"
-  },
-  "dependencies": {
-    "@cyber-insight/cyber-scripts": "2.1.3"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "./node_modules/@cyber-insight/cyber-scripts/scripts/lint.js"
-    ]
+    "extends": "react-app"
   },
-  "babel": {
-    "extends": "@cyber-insight/cyber-scripts/scripts/babel.js"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
