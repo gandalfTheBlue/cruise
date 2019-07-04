@@ -1,44 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 项目简介
 
-## Available Scripts
+- _此处省略....(简单描述该项目名称、描述、功能概览，由该项目前端开发者覆盖填写)_
 
-In the project directory, you can run:
+## 安装
 
-### `npm start`
+- yarn
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 本地启动
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- yarn start，在浏览器中访问 [localhost:3000](http://localhost:3000/)
+- 如果有后端服务请求，请到根目录下的 config 文件夹的 devServer.js 里面更改后端服务地址
 
-### `npm test`
+## 发布构建
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 需要使用`Jenkins`构建发布
+- 部分交付项目无`Jenkins`，使用`yarn build`构建至`dist`目录，使用`yarn local`启动服务访问`dist`目录
 
-### `npm run build`
+_关于 vendor_
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+我们的基础架构会将不常更改的三方库，例如 react、react-dom、redux、antd 等（配置`webpack/vendor.js`），打包到 vendor 目录（`webpack/vendor`）中。
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+需要注意的是，vendor 是由版本号控制（`webpack/config.js`第三行），每次修改`webpack/vendor.js`中的三方包，都需要将版本号+1，然后执行`yarn run vendor`。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+在产品功能发布中，一个 vendor 版本号只能被构建一次，不允许重复使用一个版本号进行多次构建。
 
-### `npm run eject`
+没有特殊情况，不要私自向 package.json 中添加三方依赖
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 前端相关技术文档及规范：
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [前端系统架构设计](http://192.168.199.171:8090/pages/viewpage.action?pageId=99582305)
+- [前端代码风格统一规范](http://192.168.199.171:8090/pages/viewpage.action?pageId=98012857)
+- [前端兼容性标准及适配准则](http://192.168.199.171:8090/pages/viewpage.action?pageId=91586653)
+- [前端 git 分支版本管理及 code review](http://192.168.199.171:8090/pages/viewpage.action?pageId=99583379)
+- [前端工程自动化构建、发布](http://192.168.199.171:8090/pages/viewpage.action?pageId=99582933)
