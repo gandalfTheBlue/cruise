@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import Dashboard from './views/dashboard'
+import Dashboard from './views/dashboard/dashboard'
 
 function AppRouter() {
   return (

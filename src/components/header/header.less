@@ -1,3 +1,5 @@
+@import '../../styles/globalVariables.less';
+
 .header {
   display: flex;
   justify-content: center;
@@ -5,18 +7,21 @@
   height: 60px;
   box-shadow: 0 2px 2px -2px grey;
   background: #ffffff;
+
   .content {
-    width: 1366px;
+    width: @min-width;
     display: flex;
     justify-content: space-between;
     img {
       height: 40px;
     }
+
     .avatar {
       cursor: pointer;
       float: right;
       display: inline-flex;
       align-items: center;
+
       img {
         height: 38px;
         border: 1px solid grey;
@@ -24,6 +29,7 @@
         margin-right: 5px;
       }
     }
+
     .user-option {
       position: absolute;
       top: 40px;
