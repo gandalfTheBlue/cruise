@@ -1,0 +1,39 @@
+@import '../../styles/globalVariables.less';
+
+.history {
+  padding: 10px;
+
+  .title {
+    font-size: 24px;
+    color: @leftTextColor;
+  }
+
+  ul {
+    color: @leftTextColor2;
+    font-size: 12px;
+    padding-left: 15px;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: #0084cf;
+      }
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      margin-right: 10px;
+      background-color: @leftTextColor2;
+    }
+
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin: 2px;
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './navBar.less'
+import { arrayNotEmpty } from '../../utils/common'
 
 const NavBar = ({ navItems }) => (
   <div className='navbar'>
     <ul>
-      {navItems &&
-        navItems.length > 0 &&
+      {arrayNotEmpty(navItems) &&
         navItems.map(item => (
           <li key={item.name}>
             <NavLink to={item.path} activeClassName='active'>
