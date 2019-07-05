@@ -4,24 +4,27 @@
   background: @leftBackground;
   height: calc(100vh - 80px);
   padding-top: 20px;
+
   ul {
-    margin: 0;
-    a {
-      text-decoration: none;
-      display: flex;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: normal;
-      padding: 13px 20px 12px;
-      align-items: center;
-    }
-    &:hover a,
-    .active {
-      color: red;
-      background-color: blue;
-    }
-    .iconfont {
-      margin-right: 15px;
+    padding-left: 0;
+
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        display: flex;
+        color: #ffffff;
+        padding: 13px 20px 12px;
+        align-items: center;
+      }
+      &:hover a,
+      .active {
+        color: red;
+        background-color: blue;
+      }
+      .iconfont {
+        margin-right: 15px;
+      }
     }
   }
 }

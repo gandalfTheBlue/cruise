@@ -5,6 +5,7 @@ import './navBar.less'
 const NavBar = ({ navItems }) => (
   <div className='navbar'>
     <ul>
+      DASHBOARD
       {navItems &&
         navItems.length > 0 &&
         navItems.map(item => (
