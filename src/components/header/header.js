@@ -25,9 +25,9 @@ const Avatar = () => {
       <ul className='user-option'>
         {showOptions &&
           userOptions.map(option => (
-            <li className='user-menu-item' key={option.name}>
+            <li className='user-option-item' key={option.name}>
               <span className={`iconfont ${option.icon}`} />
-              <span className='menu-label'>{option.name}</span>
+              <span className='item-label'>{option.name}</span>
             </li>
           ))}
       </ul>
