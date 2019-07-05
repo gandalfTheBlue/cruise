@@ -6,7 +6,7 @@ import NavBar from './components/navBar/navBar'
 import AppRouter from './appRouter'
 
 const navItems = [
-  { name: 'DASHBOARD', path: '/', icon: 'icon-dashboard' },
+  { name: 'DASHBOARD', path: '/dashboard', icon: 'icon-dashboard' },
   { name: 'AGENT', path: '/agent', icon: 'icon-sitemap' },
   { name: 'MY CRUISE', path: '/myCruise', icon: 'icon-boat' },
   { name: 'HELP', path: '/help', icon: 'icon-life-bouy' }

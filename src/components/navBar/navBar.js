@@ -1,19 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './navBar.less'
 
 const NavBar = ({ navItems }) => (
   <div className='navbar'>
     <ul>
-      DASHBOARD
       {navItems &&
         navItems.length > 0 &&
         navItems.map(item => (
           <li key={item.name}>
-            <Link to={item.path}>
+            <NavLink to={item.path} activeClassName='active'>
               <span className={`iconfont ${item.icon}`} />
               <span>{item.name}</span>
-            </Link>
+            </NavLink>
           </li>
         ))}
     </ul>
