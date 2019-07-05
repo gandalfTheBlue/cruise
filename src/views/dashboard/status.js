@@ -16,6 +16,21 @@ const cards = [
   }
 ]
 
+const statistics = [
+  {
+    type: 'ALL',
+    number: 8
+  },
+  {
+    type: 'PHYSICAL',
+    number: 4
+  },
+  {
+    type: 'VIRTUAL',
+    number: 4
+  }
+]
+
 const Card = ({ card }) => (
   <div className='container'>
     <div className={`card ${card.typeClass}`}>
@@ -32,8 +47,13 @@ const Status = () => (
       <Card card={card} key={card.type} />
     ))}
     <div className='container'>
-      <div className='card building'>
-        <span className='iconfont icon-cog' />
+      <div className='statistic'>
+        {statistics.map(item => (
+          <div key={item.type} className='item'>
+            <span className='type'>{item.type}</span>
+            <span className='number'>{item.number}</span>
+          </div>
+        ))}
       </div>
     </div>
   </div>
