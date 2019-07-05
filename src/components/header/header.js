@@ -35,16 +35,14 @@ const Avatar = () => {
   )
 }
 
-const Header = () => {
-  return (
-    <div className='header'>
-      <div className='content'>
-        <div />
-        <img src={logo} alt='logo' />
-        <Avatar />
-      </div>
+const Header = () => (
+  <div className='header'>
+    <div className='content'>
+      <div />
+      <img src={logo} alt='logo' />
+      <Avatar />
     </div>
-  )
-}
+  </div>
+)
 
 export default Header

@@ -1,4 +1,16 @@
+@import './styles/globalVariables.less';
+
 .App {
   min-width: 1366px;
   height: 100vh;
+  background: @backgroundColor;
+  .content {
+    width: 1366px;
+    margin: auto;
+    display: flex;
+    .left-side {
+      width: 200px;
+      height: calc(100vh - 60px);
+    }
+  }
 }
