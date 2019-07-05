@@ -14,7 +14,11 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock:install": "cd mock-server && yarn",
+    "mock:start": "cd mock-server && yarn start",
+    "start:all": "concurrently \"yarn mock:start\" \"yarn start\"",
+    "install:all": "concurrently \"yarn\" \"yarn mock:install\""
   },
   "eslintConfig": {
     "extends": "react-app"
