@@ -1,6 +1,7 @@
 import React from 'react'
 import './agents.less'
 import { arrayNotEmpty } from '../../../utils/common'
+import Resources from './resources'
 
 const Agents = ({ agents }) => (
   <div className='agents'>
@@ -8,12 +9,7 @@ const Agents = ({ agents }) => (
       agents.map(agent => (
         <div key={agent.id} className='agent-container'>
           <div className='agent-system'>
-            <img
-              width='100%'
-              height='100%'
-              alt={agent.os}
-              src={`../../../assets/os-icons/${agent.os}.png`}
-            />
+            <img alt={agent.os} src={`/assets/os-icons/${agent.os}.png`} />
           </div>
           <div className='agent-details'>
             <div className='agent-info'>
@@ -30,10 +26,15 @@ const Agents = ({ agents }) => (
               </div>
               <div className='agent-location'>
                 <span className='iconfont icon-folder' />
-                <span className='ip'>{agent.location}</span>
+                <span>{agent.location}</span>
               </div>
             </div>
-            <div className='user-action'>test</div>
+            <div className='user-action'>
+              <button className='add-resource'>
+                <span className='iconfont icon-plus' />
+              </button>
+              <Resources resources={agent.resources} />
+            </div>
           </div>
         </div>
       ))}

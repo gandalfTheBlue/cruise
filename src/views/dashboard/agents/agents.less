@@ -74,6 +74,49 @@
           }
         }
       }
+
+      .user-action {
+        .add-resource {
+          height: 18px;
+          background: @blueLight;
+          border: none;
+          color: @backgroundWhite;
+          line-height: 22px;
+          padding: 0 5px;
+          cursor: pointer;
+
+          &:focus {
+            border: none;
+            outline: none;
+          }
+
+          &:hover {
+            background: @blueDark;
+          }
+        }
+
+        .agent-resources {
+          display: flex;
+          margin-left: 10px;
+
+          div {
+            background: @backgroundColor;
+            padding: 0 7px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+
+            .resource-name {
+              margin-right: 8px;
+            }
+
+            .iconfont {
+              font-size: 16px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 }
