@@ -34,6 +34,12 @@ const Agents = ({ agents }) => (
                 <span className='iconfont icon-plus' />
               </button>
               <Resources resources={agent.resources} />
+              {agent.status === 'building' && (
+                <button className='deny-resource'>
+                  <span className='iconfont icon-deny' />
+                  Deny
+                </button>
+              )}
             </div>
           </div>
         </div>
