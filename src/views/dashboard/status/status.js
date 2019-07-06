@@ -1,5 +1,5 @@
 import React from 'react'
-import './dashboard.less'
+import './status.less'
 
 const cards = [
   {

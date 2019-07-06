@@ -1,4 +1,4 @@
-@import '../../styles/globalVariables.less';
+@import '../../../styles/globalVariables.less';
 
 .status-monitor {
   display: flex;
@@ -8,6 +8,10 @@
     height: 120px;
     flex: 1;
     margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     .card {
       height: 100%;
@@ -32,7 +36,7 @@
         top: 15px;
         font-size: 18px;
         font-weight: bold;
-        color: #fff;
+        color: @backgroundWhite;
       }
 
       .number {
@@ -40,7 +44,7 @@
         bottom: 10px;
         right: 25px;
         font-size: 48px;
-        color: #fff;
+        color: @backgroundWhite;
       }
     }
 
@@ -65,7 +69,7 @@
     }
 
     .statistic {
-      background: #fff;
+      background: @backgroundWhite;
       height: 100%;
       display: flex;
       justify-content: space-evenly;
@@ -91,9 +95,21 @@
       }
     }
   }
+}
 
-  .container:last-child {
-    margin-right: 0;
+.filter {
+  margin-top: 15px;
+  height: 50px;
+  display: flex;
+  background: @backgroundWhite;
+
+  .container {
+    flex: 1;
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
