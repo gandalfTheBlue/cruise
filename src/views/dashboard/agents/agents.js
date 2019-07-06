@@ -2,6 +2,7 @@ import React from 'react'
 import './agents.less'
 import { arrayNotEmpty } from '../../../utils/common'
 import Resources from './resources'
+import Button from '../../../components/button/button'
 
 const Agents = ({ agents }) => (
   <div className='agents'>
@@ -30,15 +31,20 @@ const Agents = ({ agents }) => (
               </div>
             </div>
             <div className='user-action'>
-              <button className='add-resource'>
-                <span className='iconfont icon-plus' />
-              </button>
+              <div className='add-resource'>
+                <Button theme='default' icon='plus' />
+              </div>
               <Resources resources={agent.resources} />
               {agent.status === 'building' && (
-                <button className='deny-resource'>
-                  <span className='iconfont icon-deny' />
-                  Deny
-                </button>
+                // <button className='deny-resource'>
+                //   <span className='iconfont icon-deny' />
+                //   Deny
+                // </button>
+                <div className='deny-resource'>
+                  <Button theme='default' icon='deny'>
+                    Deny
+                  </Button>
+                </div>
               )}
             </div>
           </div>

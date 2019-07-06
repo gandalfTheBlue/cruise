@@ -1,0 +1,28 @@
+@import '../../styles/globalVariables.less';
+
+.cruise-btn {
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  .iconfont {
+    vertical-align: middle;
+  }
+
+  .icon-margin {
+    margin-right: 8px;
+  }
+}
+
+.cruise-btn-default {
+  background: @blueLight;
+  color: @backgroundWhite;
+
+  &:hover {
+    background: @blueDark;
+  }
+}
