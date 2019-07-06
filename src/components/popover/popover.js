@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import './popover.less'
 import { useClickOutside } from '../../customHooks/useClickOutside'
+import Button from '../button/button'
 
 const Popover = props => {
   let position = {}
@@ -23,6 +24,18 @@ const Popover = props => {
   return props.visible ? (
     <div ref={wrapperRef} style={position} className='cruise-popover'>
       <div className='cruise-popover-pointer' />
+      <div className='popover-detail'>
+        <div className='popover-title'>
+          Separate multiple resources name with commas
+        </div>
+        <div className='popover-input'>
+          <input />
+        </div>
+        <div className='popover-actions'>
+          <Button theme='default'>Add resources</Button>
+          <Button theme='dark'>Cancel</Button>
+        </div>
+      </div>
       <div />
     </div>
   ) : null

@@ -2,7 +2,7 @@
 
 .cruise-popover {
   width: 570px;
-  height: 160px;
+  height: 140px;
   background: @backgroundWhite;
   position: absolute;
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
@@ -30,5 +30,40 @@
     position: absolute;
     top: -8px;
     left: -6px;
+  }
+}
+
+.popover-detail {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  margin: 15px 15px;
+
+  & > div {
+    flex: 1;
+  }
+
+  .popover-input {
+    margin-right: 30px;
+    input {
+      width: 100%;
+      padding: 0 15px;
+      height: 34px;
+      border: 1px solid #999;
+      border-radius: 3px;
+      margin-bottom: 15px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .popover-actions {
+    button {
+      height: 30px;
+      width: 110px;
+      margin-right: 10px;
+    }
   }
 }
