@@ -31,7 +31,12 @@ const Filter = () => (
         <input />
       </div>
     </div>
-    <div className='container' />
+    <div className='container'>
+      <div className='display'>
+        <span className='iconfont icon-th-card' />
+        <span className='iconfont icon-th-list' />
+      </div>
+    </div>
   </div>
 )
 

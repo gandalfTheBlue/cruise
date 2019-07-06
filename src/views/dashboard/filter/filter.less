@@ -28,6 +28,7 @@
       }
 
       .active {
+        color: @blueLight;
         border-bottom: 3px solid @blueLight;
       }
     }
@@ -43,6 +44,7 @@
         font-size: 20px;
         margin-left: 10px;
         margin-right: 10px;
+        opacity: 0.3;
       }
 
       input {
@@ -51,6 +53,23 @@
 
         &:focus {
           outline: none;
+        }
+      }
+    }
+
+    .display {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 5px;
+
+      span {
+        font-size: 20px;
+        margin-right: 15px;
+
+        &:last-child {
+          color: @blueLight;
         }
       }
     }
