@@ -41,7 +41,7 @@ const Agents = ({ agents }) => {
                   className='add-resource'
                   onClick={e => {
                     setPopoverVisible(true)
-                    setPopoverTarget(e.target)
+                    setPopoverTarget(e.currentTarget)
                   }}
                 >
                   <Button theme='default' icon='plus' />

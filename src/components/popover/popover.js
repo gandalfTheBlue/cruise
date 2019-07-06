@@ -10,15 +10,20 @@ const Popover = props => {
   if (props.target) {
     const boundingClientRect = props.target.getBoundingClientRect()
     position = {
-      top: boundingClientRect.top + window.scrollY + boundingClientRect.height,
+      top:
+        boundingClientRect.top +
+        window.scrollY +
+        boundingClientRect.height +
+        12,
       left:
         boundingClientRect.left + window.scrollX - boundingClientRect.width / 2
     }
   }
 
   return props.visible ? (
-    <div ref={wrapperRef}>
-      <div className='cruise-popover' style={position} />
+    <div ref={wrapperRef} style={position} className='cruise-popover'>
+      <div className='cruise-popover-pointer' />
+      <div />
     </div>
   ) : null
 }
