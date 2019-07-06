@@ -22,17 +22,17 @@ const TypeFilter = () => {
 
 const Filter = () => (
   <div className='filter'>
-    <div className='container'>
+    <div className='filter-container'>
       <TypeFilter />
     </div>
-    <div className='container'>
-      <div className='search'>
+    <div className='filter-container'>
+      <div className='filter-search'>
         <span className='iconfont icon-search' />
         <input />
       </div>
     </div>
-    <div className='container'>
-      <div className='display'>
+    <div className='filter-container'>
+      <div className='filter-display'>
         <span className='iconfont icon-th-card' />
         <span className='iconfont icon-th-list' />
       </div>

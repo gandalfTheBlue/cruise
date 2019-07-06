@@ -16,7 +16,10 @@ const Avatar = () => {
   const [showOptions, setShowOptions] = useState(false)
   return (
     <div>
-      <div className='avatar' onClick={() => setShowOptions(!showOptions)}>
+      <div
+        className='header-avatar'
+        onClick={() => setShowOptions(!showOptions)}
+      >
         <img src='/assets/avatar/yaoming_meme.svg' alt='avatar' />
         <span className='iconfont icon-angle-down' />
       </div>

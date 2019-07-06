@@ -4,12 +4,12 @@ import './historyLog.less'
 
 const HistoryLog = ({ histories }) => (
   <div className='history'>
-    <span className='title'>History</span>
+    <span className='history-title'>History</span>
     <ul>
       {arrayNotEmpty(histories) &&
         histories.map(history => (
           <li key={history.id}>
-            <span className='dot' />
+            <span className='history-dot' />
             <p>
               {history.agent}/{history.action}
             </p>
