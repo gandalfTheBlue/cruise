@@ -1,56 +1,67 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import './agents.less'
 import { arrayNotEmpty } from '../../../utils/common'
 import Resources from './resources'
 import Button from '../../../components/button/button'
+import Popover from '../../../components/popover/popover'
+import { useClickOutside } from '../../../customHooks/useClickOutside'
 
-const Agents = ({ agents }) => (
-  <div className='agents'>
-    {arrayNotEmpty(agents) &&
-      agents.map(agent => (
-        <div key={agent.id} className='agent-container'>
-          <div className='agent-system'>
-            <img alt={agent.os} src={`/assets/os-icons/${agent.os}.png`} />
-          </div>
-          <div className='agent-details'>
-            <div className='agent-info'>
-              <div>
-                <span className='iconfont icon-desktop' />
-                <span className='agent-name'>{agent.name}</span>
-              </div>
-              <div className='agent-status'>
-                <div className={`agent-${agent.status}`}>{agent.status}</div>
-              </div>
-              <div className='agent-ip'>
-                <span className='iconfont icon-info' />
-                <span className='ip'>{agent.ip}</span>
-              </div>
-              <div className='agent-location'>
-                <span className='iconfont icon-folder' />
-                <span>{agent.location}</span>
-              </div>
+const Agents = ({ agents }) => {
+  const [popoverVisible, setPopoverVisible] = useState(false)
+  const handleClickOutside = () => setPopoverVisible(false)
+  const wrapperRef = useRef(null)
+  useClickOutside(wrapperRef, handleClickOutside)
+
+  return (
+    <div className='agents'>
+      {arrayNotEmpty(agents) &&
+        agents.map(agent => (
+          <div key={agent.id} className='agent-container'>
+            <div className='agent-system'>
+              <img alt={agent.os} src={`/assets/os-icons/${agent.os}.png`} />
             </div>
-            <div className='user-action'>
-              <div className='add-resource'>
-                <Button theme='default' icon='plus' />
-              </div>
-              <Resources resources={agent.resources} />
-              {agent.status === 'building' && (
-                // <button className='deny-resource'>
-                //   <span className='iconfont icon-deny' />
-                //   Deny
-                // </button>
-                <div className='deny-resource'>
-                  <Button theme='default' icon='deny'>
-                    Deny
-                  </Button>
+            <div className='agent-details'>
+              <div className='agent-info'>
+                <div>
+                  <span className='iconfont icon-desktop' />
+                  <span className='agent-name'>{agent.name}</span>
                 </div>
-              )}
+                <div className='agent-status'>
+                  <div className={`agent-${agent.status}`}>{agent.status}</div>
+                </div>
+                <div className='agent-ip'>
+                  <span className='iconfont icon-info' />
+                  <span className='ip'>{agent.ip}</span>
+                </div>
+                <div className='agent-location'>
+                  <span className='iconfont icon-folder' />
+                  <span>{agent.location}</span>
+                </div>
+              </div>
+              <div className='user-action'>
+                <div
+                  className='add-resource'
+                  onClick={() => {
+                    setPopoverVisible(true)
+                  }}
+                >
+                  <Button theme='default' icon='plus' />
+                </div>
+                <Resources resources={agent.resources} />
+                {agent.status === 'building' && (
+                  <div className='deny-resource'>
+                    <Button theme='default' icon='deny'>
+                      Deny
+                    </Button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-  </div>
-)
+        ))}
+      <Popover visible={popoverVisible} wrapperRef={wrapperRef} />
+    </div>
+  )
+}
 
 export default Agents
