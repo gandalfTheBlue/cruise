@@ -25,11 +25,33 @@
         display: flex;
         border-right: 1px solid rgba(225, 228, 230, 0.8);
         cursor: pointer;
-        font-weight: bold;
       }
 
       .active {
         border-bottom: 3px solid @blueLight;
+      }
+    }
+
+    .search {
+      display: flex;
+      height: 34px;
+      align-items: center;
+      margin: 8px 80px 8px 0;
+      background: @backgroundColor;
+
+      .icon-search {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      input {
+        border: none;
+        background: none;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }

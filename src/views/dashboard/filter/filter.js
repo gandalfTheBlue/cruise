@@ -25,7 +25,12 @@ const Filter = () => (
     <div className='container'>
       <TypeFilter />
     </div>
-    <div className='container' />
+    <div className='container'>
+      <div className='search'>
+        <span className='iconfont icon-search' />
+        <input />
+      </div>
+    </div>
     <div className='container' />
   </div>
 )
