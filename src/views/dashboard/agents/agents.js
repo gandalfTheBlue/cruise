@@ -16,7 +16,23 @@ const Agents = ({ agents }) => (
             />
           </div>
           <div className='agent-details'>
-            <div className='agent-info'>test</div>
+            <div className='agent-info'>
+              <div>
+                <span className='iconfont icon-desktop' />
+                <span className='agent-name'>{agent.name}</span>
+              </div>
+              <div className='agent-status'>
+                <div className={`agent-${agent.status}`}>{agent.status}</div>
+              </div>
+              <div className='agent-ip'>
+                <span className='iconfont icon-info' />
+                <span className='ip'>{agent.ip}</span>
+              </div>
+              <div className='agent-location'>
+                <span className='iconfont icon-folder' />
+                <span className='ip'>{agent.location}</span>
+              </div>
+            </div>
             <div className='user-action'>test</div>
           </div>
         </div>

@@ -22,7 +22,58 @@
     }
 
     .agent-details {
+      display: flex;
+      flex-direction: column;
       flex: 8;
+
+      & > div {
+        height: 50%;
+        align-items: center;
+        display: flex;
+      }
+
+      .agent-info {
+        div {
+          margin-right: 40px;
+          display: flex;
+          align-items: center;
+
+          .iconfont {
+            font-size: 16px;
+            margin-right: 10px;
+            color: @fontColor;
+          }
+        }
+
+        .agent-status {
+          width: 70px;
+        }
+
+        .agent-name {
+          font-weight: bold;
+          color: @blueLight;
+        }
+
+        .agent-idle {
+          background: @idleBackground;
+          padding: 0 10px;
+          color: @backgroundWhite;
+        }
+
+        .agent-building {
+          background: @buildingBackground;
+          padding: 0 5px;
+          color: @backgroundWhite;
+        }
+
+        .agent-ip {
+          width: 130px;
+
+          .ip {
+            margin-top: 1px;
+          }
+        }
+      }
     }
   }
 }
