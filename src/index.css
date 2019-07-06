@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Avenir';
-  src: url('./assets/fonts/Avenir-Light.eot?#iefix') format('embedded-opentype'),
-    url('./assets/fonts/Avenir-Light.woff') format('woff'),
-    url('./assets/fonts/Avenir-Light.ttf') format('truetype');
+  src: url('/assets/fonts/Avenir-Light.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/Avenir-Light.woff') format('woff'),
+    url('/assets/fonts/Avenir-Light.ttf') format('truetype');
 }
 
 body {

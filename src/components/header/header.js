@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import './header.less'
-import logo from '../../assets/logo/logo.svg'
-import avatar from '../../assets/avatar/yaoming_meme.svg'
 
 const userOptions = [
   {
@@ -19,7 +17,7 @@ const Avatar = () => {
   return (
     <div>
       <div className='avatar' onClick={() => setShowOptions(!showOptions)}>
-        <img src={avatar} alt='avatar' />
+        <img src='/assets/avatar/yaoming_meme.svg' alt='avatar' />
         <span className='iconfont icon-angle-down' />
       </div>
       <ul className='user-option'>
@@ -39,7 +37,7 @@ const Header = () => (
   <div className='header'>
     <div className='header-container'>
       <div />
-      <img src={logo} alt='logo' />
+      <img src='/assets/logo/logo.svg' alt='logo' />
       <Avatar />
     </div>
   </div>
