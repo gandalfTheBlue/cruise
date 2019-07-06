@@ -1,16 +1,14 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import './agents.less'
 import { arrayNotEmpty } from '../../../utils/common'
 import Resources from './resources'
 import Button from '../../../components/button/button'
 import Popover from '../../../components/popover/popover'
-import { useClickOutside } from '../../../customHooks/useClickOutside'
 
 const Agents = ({ agents }) => {
   const [popoverVisible, setPopoverVisible] = useState(false)
+  const [popoverTarget, setPopoverTarget] = useState(null)
   const handleClickOutside = () => setPopoverVisible(false)
-  const wrapperRef = useRef(null)
-  useClickOutside(wrapperRef, handleClickOutside)
 
   return (
     <div className='agents'>
@@ -41,8 +39,9 @@ const Agents = ({ agents }) => {
               <div className='user-action'>
                 <div
                   className='add-resource'
-                  onClick={() => {
+                  onClick={e => {
                     setPopoverVisible(true)
+                    setPopoverTarget(e.target)
                   }}
                 >
                   <Button theme='default' icon='plus' />
@@ -59,7 +58,11 @@ const Agents = ({ agents }) => {
             </div>
           </div>
         ))}
-      <Popover visible={popoverVisible} wrapperRef={wrapperRef} />
+      <Popover
+        visible={popoverVisible}
+        clickOutside={handleClickOutside}
+        target={popoverTarget}
+      />
     </div>
   )
 }
