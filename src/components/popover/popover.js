@@ -6,7 +6,7 @@ import Button from '../button/button'
 const Popover = props => {
   let position = {}
   const wrapperRef = useRef(null)
-  useClickOutside(wrapperRef, props.clickOutside)
+  useClickOutside(wrapperRef, props.hidePopover)
 
   if (props.target) {
     const boundingClientRect = props.target.getBoundingClientRect()
@@ -24,6 +24,7 @@ const Popover = props => {
   return props.visible ? (
     <div ref={wrapperRef} style={position} className='cruise-popover'>
       <div className='cruise-popover-pointer' />
+      <span className='iconfonts icon-close' onClick={props.hidePopover} />
       <div className='popover-detail'>
         <div className='popover-title'>
           Separate multiple resources name with commas

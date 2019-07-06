@@ -8,62 +8,71 @@
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   border: 1px solid @blueLight;
-}
 
-.cruise-popover-pointer {
-  width: 0;
-  height: 0;
-  border-width: 10px 6px;
-  border-style: solid;
-  border-color: transparent transparent @blueLight transparent;
-  position: absolute;
-  top: -21px;
-  left: 25px;
+  .iconfonts {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    color: @blueLight;
+    cursor: pointer;
+  }
 
-  &:after {
-    content: '';
+  .cruise-popover-pointer {
     width: 0;
     height: 0;
     border-width: 10px 6px;
     border-style: solid;
-    border-color: transparent transparent @backgroundWhite transparent;
+    border-color: transparent transparent @blueLight transparent;
     position: absolute;
-    top: -8px;
-    left: -6px;
-  }
-}
+    top: -21px;
+    left: 25px;
 
-.popover-detail {
-  display: flex;
-  flex-direction: column;
-  height: 120px;
-  margin: 15px 15px;
-
-  & > div {
-    flex: 1;
-  }
-
-  .popover-input {
-    margin-right: 30px;
-    input {
-      width: 100%;
-      padding: 0 15px;
-      height: 34px;
-      border: 1px solid #999;
-      border-radius: 3px;
-      margin-bottom: 15px;
-
-      &:focus {
-        outline: none;
-      }
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-width: 10px 6px;
+      border-style: solid;
+      border-color: transparent transparent @backgroundWhite transparent;
+      position: absolute;
+      top: -8px;
+      left: -6px;
     }
   }
 
-  .popover-actions {
-    button {
-      height: 30px;
-      width: 110px;
-      margin-right: 10px;
+  .popover-detail {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    margin: 15px 15px;
+
+    & > div {
+      flex: 1;
+    }
+
+    .popover-input {
+      margin-right: 30px;
+      input {
+        width: 100%;
+        padding: 0 15px;
+        height: 34px;
+        border: 1px solid #999;
+        border-radius: 3px;
+        margin-bottom: 15px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .popover-actions {
+      button {
+        height: 30px;
+        width: 110px;
+        margin-right: 10px;
+      }
     }
   }
 }

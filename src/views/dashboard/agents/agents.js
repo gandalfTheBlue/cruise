@@ -8,7 +8,7 @@ import Popover from '../../../components/popover/popover'
 const Agents = ({ agents }) => {
   const [popoverVisible, setPopoverVisible] = useState(false)
   const [popoverTarget, setPopoverTarget] = useState(null)
-  const handleClickOutside = () => setPopoverVisible(false)
+  const hidePopover = () => setPopoverVisible(false)
 
   return (
     <div className='agents'>
@@ -60,7 +60,7 @@ const Agents = ({ agents }) => {
         ))}
       <Popover
         visible={popoverVisible}
-        clickOutside={handleClickOutside}
+        hidePopover={hidePopover}
         target={popoverTarget}
       />
     </div>
