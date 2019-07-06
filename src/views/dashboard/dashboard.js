@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Status from './status/status'
 import Filter from './filter/filter'
 import { httpGet } from '../../utils/request'
+import Agents from './agents/agents'
 
 const Dashboard = () => {
   const [agents, setAgents] = useState([])
@@ -18,6 +19,7 @@ const Dashboard = () => {
     <div>
       <Status />
       <Filter />
+      <Agents agents={agents} />
     </div>
   )
 }

@@ -2,13 +2,14 @@
 
 .App {
   min-width: @min-width;
-  height: 100vh;
+  height: 100%;
   background: @backgroundColor;
 
   .content {
     width: @min-width;
     margin: auto;
     display: flex;
+    padding-top: 60px;
 
     .left-side {
       width: 250px;
@@ -17,11 +18,13 @@
       display: flex;
       flex-direction: column;
       overflow-y: auto;
+      position: fixed;
     }
 
     .main {
       width: calc(100% - 250px);
       padding: 20px 0 20px 30px;
+      margin-left: 230px;
     }
   }
 }

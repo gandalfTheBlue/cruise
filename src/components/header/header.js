@@ -37,7 +37,7 @@ const Avatar = () => {
 
 const Header = () => (
   <div className='header'>
-    <div className='content'>
+    <div className='header-container'>
       <div />
       <img src={logo} alt='logo' />
       <Avatar />

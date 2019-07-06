@@ -1,6 +1,9 @@
 @import '../../styles/globalVariables.less';
 
 .header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +11,7 @@
   box-shadow: 0 2px 2px -2px grey;
   background: @backgroundWhite;
 
-  .content {
+  .header-container {
     width: @min-width;
     display: flex;
     justify-content: space-between;
