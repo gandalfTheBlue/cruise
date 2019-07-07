@@ -10,10 +10,7 @@
       "resources": [
         "Firefox",
         "Safari",
-        "Chrome",
-        "test",
-        "dasdf",
-        "asfasdfasdf"
+        "Chrome"
       ],
       "id": 1
     },
@@ -27,9 +24,7 @@
       "resources": [
         "Firefox",
         "Safari",
-        "Ubuntu",
-        "wwwwwwwwwwwwwwwww",
-        "nnnnnnnnnnnnnnnnnnnnn"
+        "Ubuntu"
       ],
       "id": 2
     },
