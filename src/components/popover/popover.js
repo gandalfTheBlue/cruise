@@ -1,15 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import './popover.less'
 import { useClickOutside } from '../../customHooks/useClickOutside'
 import Button from '../button/button'
 
-const Popover = props => {
+const calcPosition = target => {
   let position = {}
-  const wrapperRef = useRef(null)
-  useClickOutside(wrapperRef, props.hidePopover)
-
-  if (props.target) {
-    const boundingClientRect = props.target.getBoundingClientRect()
+  if (target) {
+    const boundingClientRect = target.getBoundingClientRect()
     position = {
       top:
         boundingClientRect.top +
@@ -20,21 +17,43 @@ const Popover = props => {
         boundingClientRect.left + window.scrollX - boundingClientRect.width / 2
     }
   }
+  return position
+}
 
-  return props.visible ? (
+const Popover = props => {
+  const { popover } = props
+  const position = calcPosition(popover.target)
+  const [value, setValue] = useState('')
+  const wrapperRef = useRef(null)
+  const hidePopOverAction = () => {
+    props.hidePopover()
+    setValue('')
+  }
+  useClickOutside(wrapperRef, hidePopOverAction)
+
+  const addResources = () => {
+    props.addResources(popover.agentId, value.split(','))
+    hidePopOverAction()
+  }
+
+  return popover.visible ? (
     <div ref={wrapperRef} style={position} className='cruise-popover'>
       <div className='cruise-popover-pointer' />
-      <span className='iconfonts icon-close' onClick={props.hidePopover} />
+      <span className='iconfonts icon-close' onClick={hidePopOverAction} />
       <div className='popover-detail'>
         <div className='popover-title'>
           Separate multiple resources name with commas
         </div>
         <div className='popover-input'>
-          <input />
+          <input value={value} onChange={e => setValue(e.target.value)} />
         </div>
         <div className='popover-actions'>
-          <Button theme='default'>Add resources</Button>
-          <Button theme='dark'>Cancel</Button>
+          <Button theme='default' handleClick={addResources}>
+            Add resources
+          </Button>
+          <Button theme='dark' handleClick={hidePopOverAction}>
+            Cancel
+          </Button>
         </div>
       </div>
       <div />

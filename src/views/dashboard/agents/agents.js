@@ -10,13 +10,22 @@ import Button from '../../../components/button/button'
 import Popover from '../../../components/popover/popover'
 
 const Agents = ({ agents, updateAgent }) => {
-  const [popoverVisible, setPopoverVisible] = useState(false)
-  const [popoverTarget, setPopoverTarget] = useState(null)
-  const hidePopover = () => setPopoverVisible(false)
+  const [popover, setPopover] = useState({
+    visible: false,
+    agentId: null,
+    target: null
+  })
+  const hidePopover = () => setPopover(Object.assign({}, { visible: false }))
 
   const deleteResource = (agentId, resource) => {
     let agent = getArryEleById(agents, agentId)
     agent.resources = removeEleFromArr(agent.resources, resource)
+    updateAgent(agent)
+  }
+
+  const addResources = (agentId, resources) => {
+    let agent = getArryEleById(agents, agentId)
+    agent.resources = [...new Set(agent.resources.concat(resources))]
     updateAgent(agent)
   }
 
@@ -50,8 +59,16 @@ const Agents = ({ agents, updateAgent }) => {
                 <div
                   className='add-resource'
                   onClick={e => {
-                    setPopoverVisible(true)
-                    setPopoverTarget(e.currentTarget)
+                    setPopover(
+                      Object.assign(
+                        {},
+                        {
+                          visible: true,
+                          agentId: agent.id,
+                          target: e.currentTarget
+                        }
+                      )
+                    )
                   }}
                 >
                   <Button theme='default' icon='plus' />
@@ -73,9 +90,9 @@ const Agents = ({ agents, updateAgent }) => {
           </div>
         ))}
       <Popover
-        visible={popoverVisible}
+        popover={popover}
         hidePopover={hidePopover}
-        target={popoverTarget}
+        addResources={addResources}
       />
     </div>
   )
