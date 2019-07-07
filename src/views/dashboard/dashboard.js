@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Status from './status/status'
 import Filter from './filter/filter'
-import { httpGet } from '../../utils/request'
+import { httpGet, httpPut } from '../../utils/request'
 import Agents from './agents/agents'
+import { updArryEleById } from '../../utils/common'
 
 const Dashboard = () => {
   const [agents, setAgents] = useState([])
@@ -15,11 +16,17 @@ const Dashboard = () => {
     fetchAgents()
   }, [])
 
+  async function updateAgent(agent) {
+    const response = await httpPut(`/agents/${agent.id}`, agent)
+    const updatedAgents = updArryEleById(agents, response.data)
+    setAgents(updatedAgents)
+  }
+
   return (
     <div>
       <Status />
       <Filter />
-      <Agents agents={agents} />
+      <Agents agents={agents} updateAgent={updateAgent} />
     </div>
   )
 }

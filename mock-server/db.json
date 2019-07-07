@@ -1,5 +1,6 @@
 {
-  "agents": [{
+  "agents": [
+    {
       "name": "bjstdmngbdr01.thoughtworks.com",
       "os": "windows",
       "status": "idle",
@@ -8,9 +9,7 @@
       "location": "/var/lib/cruise-agent",
       "resources": [
         "Firefox",
-        "Safari",
-        "Ubuntu",
-        "Chrome"
+        "Safari"
       ],
       "id": 1
     },
@@ -24,8 +23,7 @@
       "resources": [
         "Firefox",
         "Safari",
-        "Ubuntu",
-        "Chrome"
+        "Ubuntu"
       ],
       "id": 2
     },

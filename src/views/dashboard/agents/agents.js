@@ -1,14 +1,24 @@
 import React, { useState } from 'react'
 import './agents.less'
-import { arrayNotEmpty } from '../../../utils/common'
+import {
+  arrayNotEmpty,
+  getArryEleById,
+  removeEleFromArr
+} from '../../../utils/common'
 import Resources from './resources'
 import Button from '../../../components/button/button'
 import Popover from '../../../components/popover/popover'
 
-const Agents = ({ agents }) => {
+const Agents = ({ agents, updateAgent }) => {
   const [popoverVisible, setPopoverVisible] = useState(false)
   const [popoverTarget, setPopoverTarget] = useState(null)
   const hidePopover = () => setPopoverVisible(false)
+
+  const deleteResource = (agentId, resource) => {
+    let agent = getArryEleById(agents, agentId)
+    agent.resources = removeEleFromArr(agent.resources, resource)
+    updateAgent(agent)
+  }
 
   return (
     <div className='agents'>
@@ -46,7 +56,11 @@ const Agents = ({ agents }) => {
                 >
                   <Button theme='default' icon='plus' />
                 </div>
-                <Resources resources={agent.resources} />
+                <Resources
+                  agentId={agent.id}
+                  resources={agent.resources}
+                  deleteResource={deleteResource}
+                />
                 {agent.status === 'building' && (
                   <div className='deny-resource'>
                     <Button theme='default' icon='deny'>
