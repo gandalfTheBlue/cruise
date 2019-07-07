@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly button theme dark 1`] = `
+<button
+  className="cruise-btn cruise-btn-dark"
+/>
+`;
+
+exports[`renders correctly button theme default 1`] = `
+<button
+  className="cruise-btn cruise-btn-default"
+/>
+`;

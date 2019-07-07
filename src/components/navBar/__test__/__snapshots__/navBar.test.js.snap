@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly nav bar content 1`] = `
+<div
+  className="navbar"
+>
+  <ul />
+</div>
+`;

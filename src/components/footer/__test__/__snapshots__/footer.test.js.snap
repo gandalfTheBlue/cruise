@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly footer content 1`] = `
+<div
+  className="cruise-footer"
+>
+  © Copyright 
+  2019
+     
+  <b>
+    Thought
+  </b>
+  Works
+</div>
+`;

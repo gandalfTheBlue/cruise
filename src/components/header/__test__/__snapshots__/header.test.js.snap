@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly header content 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header-container"
+  >
+    <div />
+    <img
+      alt="logo"
+      src="/assets/logo/logo.svg"
+    />
+    <div>
+      <div
+        className="header-avatar"
+        onClick={[Function]}
+      >
+        <img
+          alt="avatar"
+          src="/assets/avatar/yaoming_meme.svg"
+        />
+        <span
+          className="iconfont icon-angle-down"
+        />
+      </div>
+      <ul
+        className="user-option"
+      />
+    </div>
+  </div>
+</div>
+`;
