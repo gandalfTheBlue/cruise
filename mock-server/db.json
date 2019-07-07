@@ -9,7 +9,8 @@
       "location": "/var/lib/cruise-agent",
       "resources": [
         "Firefox",
-        "Safari"
+        "Safari",
+        "Chrome"
       ],
       "id": 1
     },
