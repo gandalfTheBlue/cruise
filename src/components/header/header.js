@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './header.less'
+import { useClickOutside } from '../../customHooks/useClickOutside'
 
 const userOptions = [
   {
@@ -14,8 +15,11 @@ const userOptions = [
 
 const Avatar = () => {
   const [showOptions, setShowOptions] = useState(false)
+  const wrapperRef = useRef(null)
+  const hideOptions = () => setShowOptions(false)
+  useClickOutside(wrapperRef, hideOptions)
   return (
-    <div>
+    <div ref={wrapperRef}>
       <div
         className='header-avatar'
         onClick={() => setShowOptions(!showOptions)}
