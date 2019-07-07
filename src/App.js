@@ -5,6 +5,7 @@ import Header from './components/header/header'
 import NavBar from './components/navBar/navBar'
 import AppRouter from './appRouter'
 import HistoryLog from './components/historyLog/historyLog'
+import Footer from './components/footer/footer'
 
 const navItems = [
   { name: 'DASHBOARD', path: '/dashboard', icon: 'icon-dashboard' },
@@ -41,6 +42,7 @@ function App() {
             <AppRouter />
           </div>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   )
