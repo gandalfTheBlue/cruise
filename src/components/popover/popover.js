@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './popover.less'
 import { useClickOutside } from '../../customHooks/useClickOutside'
 import Button from '../button/button'
@@ -25,6 +25,7 @@ const Popover = props => {
   const position = calcPosition(popover.target)
   const [value, setValue] = useState('')
   const wrapperRef = useRef(null)
+  const inputRef = useRef(null)
   const hidePopOverAction = () => {
     props.hidePopover()
     setValue('')
@@ -36,6 +37,12 @@ const Popover = props => {
     hidePopOverAction()
   }
 
+  useEffect(() => {
+    if (inputRef && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [popover.visible])
+
   return popover.visible ? (
     <div ref={wrapperRef} style={position} className='cruise-popover'>
       <div className='cruise-popover-pointer' />
@@ -45,7 +52,11 @@ const Popover = props => {
           Separate multiple resources name with commas
         </div>
         <div className='popover-input'>
-          <input value={value} onChange={e => setValue(e.target.value)} />
+          <input
+            value={value}
+            onChange={e => setValue(e.target.value)}
+            ref={inputRef}
+          />
         </div>
         <div className='popover-actions'>
           <Button theme='default' handleClick={addResources}>
