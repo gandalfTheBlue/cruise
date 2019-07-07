@@ -33,7 +33,10 @@ const Popover = props => {
   useClickOutside(wrapperRef, hidePopOverAction)
 
   const addResources = () => {
-    props.addResources(popover.agentId, value.split(','))
+    props.addResources(
+      popover.agentId,
+      value.split(',').map(item => item.trim())
+    )
     hidePopOverAction()
   }
 
@@ -54,6 +57,7 @@ const Popover = props => {
         <div className='popover-input'>
           <input
             value={value}
+            placeholder='e.g. Chrome, Firefox'
             onChange={e => setValue(e.target.value)}
             ref={inputRef}
           />

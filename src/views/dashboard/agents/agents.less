@@ -4,7 +4,7 @@
   margin-top: 15px;
 
   .agent-container {
-    height: 110px;
+    min-height: 110px;
     background: @backgroundWhite;
     margin-bottom: 15px;
     display: flex;
@@ -27,12 +27,12 @@
       flex: 8;
 
       & > div {
-        height: 50%;
         align-items: center;
         display: flex;
       }
 
       .agent-info {
+        height: 55px;
         div {
           margin-right: 40px;
           display: flex;
@@ -77,9 +77,10 @@
 
       .user-action {
         position: relative;
+        margin-top: 10px;
 
         .add-resource {
-          padding: 0 5px;
+          padding-right: 5px;
 
           button {
             height: 18px;
@@ -88,12 +89,13 @@
 
         .agent-resources {
           display: flex;
-          margin-left: 10px;
+          flex-wrap: wrap;
+          margin-right: 100px;
 
           div {
             background: @backgroundColor;
             padding: 0 7px;
-            margin-right: 10px;
+            margin: 5px;
             display: flex;
             align-items: center;
 
