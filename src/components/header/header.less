@@ -4,19 +4,16 @@
   position: fixed;
   width: 100%;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 60px;
   -webkit-box-shadow: 0 2px 2px -2px grey;
   -moz-box-shadow: 0 2px 2px -2px grey;
   box-shadow: 0 2px 2px -2px grey;
   background: @backgroundWhite;
+  .flex-h-v-center;
 
   .header-container {
     width: @min-width;
-    display: flex;
-    justify-content: space-between;
+    .flex-h-space-between;
     img {
       height: 40px;
     }
@@ -25,8 +22,7 @@
       position: absolute;
       right: 30px;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
+      .flex-v-center;
 
       img {
         height: 38px;
@@ -49,10 +45,9 @@
       .user-option-item {
         padding: 6px 0px 4px 5px;
         color: #2d4054;
-        display: flex;
-        align-items: center;
         min-width: 128px;
         cursor: pointer;
+        .flex-v-center;
 
         &:hover {
           background-color: #efefef;

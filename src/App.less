@@ -8,17 +8,17 @@
   .content {
     width: @min-width;
     margin: auto;
-    display: flex;
     padding-top: 60px;
+    .flex;
 
     .left-side {
       width: 250px;
       height: calc(100% - 60px);
       background: @leftBackground;
-      display: flex;
-      flex-direction: column;
       overflow-y: auto;
       position: fixed;
+      .flex;
+      .flex-v;
     }
 
     .main {

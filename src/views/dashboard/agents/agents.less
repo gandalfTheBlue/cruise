@@ -7,13 +7,11 @@
     min-height: 110px;
     background: @backgroundWhite;
     margin-bottom: 15px;
-    display: flex;
+    .flex;
 
     .agent-system {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      .flex-h-v-center;
+      .flex-1;
 
       img {
         height: 80px;
@@ -22,21 +20,19 @@
     }
 
     .agent-details {
-      display: flex;
-      flex-direction: column;
-      flex: 8;
+      .flex;
+      .flex-v;
+      .flex-8;
 
       & > div {
-        align-items: center;
-        display: flex;
+        .flex-v-center;
       }
 
       .agent-info {
         height: 55px;
         div {
           margin-right: 40px;
-          display: flex;
-          align-items: center;
+          .flex-v-center;
 
           .iconfont {
             font-size: 16px;
@@ -88,16 +84,15 @@
         }
 
         .agent-resources {
-          display: flex;
-          flex-wrap: wrap;
+          .flex;
+          .flex-wrap;
           margin-right: 100px;
 
           div {
             background: @backgroundColor;
             padding: 0 7px;
             margin: 5px;
-            display: flex;
-            align-items: center;
+            .flex-v-center;
 
             .resource-name {
               margin-right: 8px;
@@ -111,9 +106,7 @@
         }
 
         .deny-resource {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          .flex-h-v-center;
           position: absolute;
           right: 20px;
 
