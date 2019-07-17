@@ -16,6 +16,20 @@ const Agent = () => {
     fetchAgents()
   }, [])
 
+  function getStatus(agents) {
+    const idles = agents.filter(agent => agent.status === 'idle').length
+    const buildings = agents.length - idles
+    const physicals = agents.filter(agent => agent.type === 'physical').length
+    const virtuals = agents.length - physicals
+    return {
+      Idle: idles,
+      Building: buildings,
+      PHYSICAL: physicals,
+      VIRTUAL: virtuals,
+      ALL: agents.length
+    }
+  }
+
   async function updateAgent(agent) {
     const response = await httpPut(`/agents/${agent.id}`, agent)
     const updatedAgents = updArryEleById(agents, response.data)
@@ -24,7 +38,7 @@ const Agent = () => {
 
   return (
     <div>
-      <Status />
+      <Status status={getStatus(agents)} />
       <Filter />
       <Agents agents={agents} updateAgent={updateAgent} />
     </div>

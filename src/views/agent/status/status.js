@@ -5,53 +5,38 @@ const cards = [
   {
     type: 'Building',
     typeClass: 'building',
-    customClass: 'icon-cog rotating',
-    number: 3
+    customClass: 'icon-cog rotating'
   },
   {
     type: 'Idle',
     typeClass: 'idle',
-    customClass: 'icon-coffee',
-    number: 5
+    customClass: 'icon-coffee'
   }
 ]
 
-const statistics = [
-  {
-    type: 'ALL',
-    number: 8
-  },
-  {
-    type: 'PHYSICAL',
-    number: 4
-  },
-  {
-    type: 'VIRTUAL',
-    number: 4
-  }
-]
+const statistics = ['ALL', 'PHYSICAL', 'VIRTUAL']
 
-const Card = ({ card }) => (
+const Card = ({ card, number }) => (
   <div className='status-container'>
     <div className={`status-card ${card.typeClass}`}>
       <span className={`iconfont ${card.customClass}`} />
       <span className='type'>{card.type}</span>
-      <div className='number'>{card.number}</div>
+      <div className='number'>{number}</div>
     </div>
   </div>
 )
 
-const Status = () => (
+const Status = ({ status }) => (
   <div className='status'>
     {cards.map(card => (
-      <Card card={card} key={card.type} />
+      <Card card={card} key={card.type} number={status[card.type]} />
     ))}
     <div className='status-container'>
       <div className='status-statistic'>
         {statistics.map(item => (
-          <div key={item.type} className='stat-item'>
-            <span className='type'>{item.type}</span>
-            <span className='number'>{item.number}</span>
+          <div key={item} className='stat-item'>
+            <span className='type'>{item}</span>
+            <span className='number'>{status[item]}</span>
           </div>
         ))}
       </div>
