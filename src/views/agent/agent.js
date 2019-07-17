@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Status from './status/status'
 import Filter from './filter/filter'
 import { httpGet, httpPut } from '../../utils/request'
 import Agents from './agents/agents'
 import { updArryEleById } from '../../utils/common'
 
+export const FilterTypeCtx = React.createContext(null)
+
 const Agent = () => {
   const [agents, setAgents] = useState([])
+  const [selectedType, setSelectedType] = useState('All')
 
   useEffect(() => {
     async function fetchAgents() {
@@ -30,6 +33,10 @@ const Agent = () => {
     }
   }
 
+  function selectType(type) {
+    setSelectedType(type)
+  }
+
   async function updateAgent(agent) {
     const response = await httpPut(`/agents/${agent.id}`, agent)
     const updatedAgents = updArryEleById(agents, response.data)
@@ -37,11 +44,13 @@ const Agent = () => {
   }
 
   return (
-    <div>
-      <Status status={getStatus(agents)} />
-      <Filter />
-      <Agents agents={agents} updateAgent={updateAgent} />
-    </div>
+    <FilterTypeCtx.Provider value={[selectedType, selectType]}>
+      <div>
+        <Status status={getStatus(agents)} />
+        <Filter />
+        <Agents agents={agents} updateAgent={updateAgent} />
+      </div>
+    </FilterTypeCtx.Provider>
   )
 }
 

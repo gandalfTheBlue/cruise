@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './filter.less'
+import { FilterTypeCtx } from '../agent'
 
 const types = ['All', 'Physical', 'Virtual']
 
 const TypeFilter = () => {
-  const [selectedType, setSelectedType] = useState('All')
+  const [selectedType, selectType] = useContext(FilterTypeCtx)
   return (
     <div className='type'>
       {types.map(type => (
         <div
           key={type}
           className={selectedType === type ? 'active' : ''}
-          onClick={() => setSelectedType(type)}
+          onClick={() => selectType(type)}
         >
           {type}
         </div>
