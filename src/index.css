@@ -5,6 +5,10 @@
     url('/assets/fonts/Avenir-Light.ttf') format('truetype');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;

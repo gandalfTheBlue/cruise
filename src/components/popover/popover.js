@@ -14,7 +14,8 @@ const calcPosition = target => {
         boundingClientRect.height +
         12,
       left:
-        boundingClientRect.left + window.scrollX - boundingClientRect.width / 2
+        boundingClientRect.left + window.scrollX - boundingClientRect.width / 2,
+      bottom: boundingClientRect.bottom
     }
   }
   return position
@@ -43,6 +44,15 @@ const Popover = props => {
   useEffect(() => {
     if (inputRef && inputRef.current) {
       inputRef.current.focus()
+    }
+    if (wrapperRef && wrapperRef.current) {
+      const bounding = wrapperRef.current.getBoundingClientRect()
+      if (
+        bounding.bottom >
+        (window.innerHeight || document.documentElement.clientHeight)
+      ) {
+        window.scrollBy(0, 150)
+      }
     }
   }, [popover.visible])
 
