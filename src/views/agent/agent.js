@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import Status from './status/status'
 import Filter from './filter/filter'
 import { httpGet, httpPut } from '../../utils/request'
@@ -10,6 +10,7 @@ export const FilterTypeCtx = React.createContext(null)
 const Agent = () => {
   const [agents, setAgents] = useState([])
   const [selectedType, setSelectedType] = useState('All')
+  const [filter, setFilter] = useState('')
 
   useEffect(() => {
     async function fetchAgents() {
@@ -44,7 +45,9 @@ const Agent = () => {
   }
 
   return (
-    <FilterTypeCtx.Provider value={[selectedType, selectType]}>
+    <FilterTypeCtx.Provider
+      value={{ selectedType, selectType, filter, setFilter }}
+    >
       <div>
         <Status status={getStatus(agents)} />
         <Filter />
